@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-color: #080808;
+            color: #f2f2f2;
+        }
+        .navbar {
+            width: 200px;
+            background-color: #655e5e;
+            height: 100vh;
+            padding: 20px;
+        }
+        .navbar a {
+            display: block;
+            color: #f2f2f2;
+            padding: 10px;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Left-side navigation bar -->
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'option1' %}">Option 1</a>
+        <a href="{% url 'option2' %}">Option 2</a>
+        <a href="{% url 'option3' %}">Option 3</a>
+        <a href="{% url 'option4' %}">Option 4</a>
+        <a href="{% url 'option5' %}">Option 5</a>
+    </div>
+
+    <!-- Content area -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

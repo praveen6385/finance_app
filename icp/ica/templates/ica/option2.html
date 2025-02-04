@@ -1,0 +1,15 @@
+{% extends 'ica/index.html' %}
+
+{% block content %}
+<h1>Submitted Loan Application</h1>
+{% if borrower %}
+    <p><strong>Name:</strong> {{ borrower.name }}</p>
+    <p><strong>Phone Number:</strong> {{ borrower.phone }}</p>
+    <p><strong>Loan Amount:</strong> ₹{{ borrower.loan_amount }}</p>
+    <p><strong>Loan Tenure:</strong> {{ borrower.loan_tenure }} months</p>
+    <p><strong>Interest Rate:</strong> {{ borrower.interest_rate }}%</p>
+    <p><strong>Monthly EMI:</strong> ₹{{ borrower.calculate_emi }}</p>
+{% else %}
+    <p>No data submitted yet.</p>
+{% endif %}
+{% endblock %}
